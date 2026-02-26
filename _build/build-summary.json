@@ -1,12 +1,13 @@
 {
-  "generatedAt": "2026-02-26T19:55:50.640Z",
+  "generatedAt": "2026-02-26T21:03:53.054Z",
   "htmlFiles": 2043,
-  "totalFiles": 2254,
+  "totalFiles": 2255,
   "searchDocs": 1938,
   "redirectAliases": 105,
   "assetsCopied": [
     "_assets/modern.css",
     "_assets/search.js",
+    "_assets/nav.js",
     "_assets/minisearch.min.js"
   ],
   "paliNormalizeEnabled": true,

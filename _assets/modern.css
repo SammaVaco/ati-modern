@@ -156,6 +156,68 @@ table {
   margin-top: 0;
 }
 
+[data-nav-replaced="true"] {
+  display: none !important;
+}
+
+.global-nav {
+  border-bottom: 1px solid var(--ati-border);
+  background: linear-gradient(180deg, #fffdf8 0%, #f8f1e5 100%);
+  box-shadow: 0 2px 8px rgba(40, 33, 24, 0.08);
+}
+
+.global-nav-inner {
+  width: min(100%, 1100px);
+  margin: 0 auto;
+  padding: 0.45rem 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.6rem;
+  position: relative;
+}
+
+.global-nav-toggle {
+  display: none;
+  border: 1px solid #7a2b33;
+  background: #fff;
+  color: #3d171c;
+  border-radius: 8px;
+  font-size: 0.98rem;
+  line-height: 1.1;
+  padding: 0.45rem 0.7rem;
+}
+
+.global-nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.25rem;
+}
+
+.global-nav-link {
+  display: inline-block;
+  padding: 0.35rem 0.62rem;
+  border-radius: 8px;
+  color: #4d0b13;
+  text-decoration: none;
+  font-family: "Source Sans Pro", "Gill Sans", "Trebuchet MS", "Noto Sans", sans-serif;
+  font-weight: 600;
+  font-size: 0.96rem;
+}
+
+.global-nav-link:hover {
+  background: #f5dde0;
+}
+
+.global-nav-link.is-active {
+  background: #7a2b33;
+  color: #fff;
+}
+
 .mobile-masthead {
   display: none;
 }
@@ -234,6 +296,49 @@ table {
 @media (max-width: 760px) {
   html {
     font-size: 16px;
+  }
+
+  .global-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .global-nav-inner {
+    justify-content: flex-end;
+    padding: 0.45rem 0.55rem;
+  }
+
+  .global-nav-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .global-nav-links {
+    display: none;
+    position: absolute;
+    top: calc(100% + 0.35rem);
+    left: 0.55rem;
+    right: 0.55rem;
+    background: #fffdf8;
+    border: 1px solid var(--ati-border);
+    border-radius: 12px;
+    padding: 0.4rem;
+    box-shadow: 0 12px 30px rgba(34, 27, 20, 0.18);
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 0.15rem;
+  }
+
+  .global-nav.is-open .global-nav-links {
+    display: flex;
+  }
+
+  .global-nav-link {
+    width: 100%;
+    padding: 0.55rem 0.65rem;
   }
 
   #H_billboard,
