@@ -1,0 +1,508 @@
+{
+  "generatedAt": "2026-02-26T18:32:14.400Z",
+  "paliNormalizeEnabled": true,
+  "filesChanged": 1427,
+  "totalSpansChanged": 6410,
+  "samples": [
+    {
+      "file": "abbrev.html",
+      "before": "F.L. Woodward and E.M. Hare, trans. (Oxford:",
+      "after": "FḶ. Woodward and EṂ. Hare, trans. (Oxford:"
+    },
+    {
+      "file": "abbrev.html",
+      "before": "Rhys Davids and F.L. Woodward, trans. (Oxford:",
+      "after": "Rhys Davids and FḶ. Woodward, trans. (Oxford:"
+    },
+    {
+      "file": "abbrev.html",
+      "before": "SuttaReadings.net",
+      "after": "SuttaReadingsṇet"
+    },
+    {
+      "file": "abbrev.html",
+      "before": ".t .th .d .dh .n .l",
+      "after": "ṭ ṭh ḍ ḍh ṇ ḷ"
+    },
+    {
+      "file": "abbrev.html",
+      "before": ".m",
+      "after": "ṃ"
+    },
+    {
+      "file": "abbrev.html",
+      "before": "\"n .",
+      "after": "ṅ ."
+    },
+    {
+      "file": "abbrev.html",
+      "before": "~n.",
+      "after": "ñ."
+    },
+    {
+      "file": "abbrev.html",
+      "before": "paa.naatipaataa verama.nii sikkhaa-pada.m samaadiyaami",
+      "after": "pāṇātipātā veramaṇī sikkhā-padaṃ samādiyāmi"
+    },
+    {
+      "file": "abbrev.html",
+      "before": "itihida.m aayasmato ko.n.da~n~nassa a~n~na-ko.n.da~n~no'tveva naama.m ahosiiti",
+      "after": "itihidaṃ āyasmato koṇḍaññassa añña-koṇḍañño'tveva nāmaṃ ahosīti"
+    },
+    {
+      "file": "befriending.html",
+      "before": "\" link at the top of a sutta page, you will find other suttas that are located nearby in the Canon. Often these \"neighbors\" concern related ",
+      "after": "\" link at the top of a sutta page, you will find other suttas that are located nearby in the Canon. Often these ṅeighbors\" concern related t"
+    },
+    {
+      "file": "faq.html",
+      "before": "were made by many esteemed translators, including: Venerables Bhikkhu Bodhi, Acharya Buddharakkhita, Bhikkhu Khantipalo, Ñanamoli Thera, Ñan",
+      "after": "were made by many esteemed translators, including: Venerables Bhikkhu Bodhi, Acharya Buddharakkhita, Bhikkhu Khantipalo, Ñanamoli Thera, Ñan"
+    },
+    {
+      "file": "faq.html",
+      "before": "<http://www.thailandamulets.com>.",
+      "after": "<http://wwwṭhailandamulets.com>."
+    },
+    {
+      "file": "faq.html",
+      "before": "<http://echo.mpiwg-berlin.mpg.de/content/buddhism/fplf>. To find a particular word or passage within those ancient manuscripts, you'll have ",
+      "after": "<http://echoṃpiwg-berlinṃpgḍe/content/buddhism/fplf>. To find a particular word or passage within those ancient manuscripts, you'll have to "
+    },
+    {
+      "file": "faq.html",
+      "before": "by R.H. Robinson, W.L. Johnson, and Thanissaro Bhikkhu (Belmont, California:",
+      "after": "by R.H. Robinson, WḶ. Johnson, and Thanissaro Bhikkhu (Belmont, California:"
+    },
+    {
+      "file": "faq.html",
+      "before": "F.L. Woodward and E.M. Hare, trans. (Oxford:",
+      "after": "FḶ. Woodward and EṂ. Hare, trans. (Oxford:"
+    },
+    {
+      "file": "glossary.html",
+      "before": "Noble, ideal. Also, a \"Noble One\" (see",
+      "after": "Noble, ideal. Also, a Ṅoble One\" (see"
+    },
+    {
+      "file": "glossary.html",
+      "before": "One of a special class of powerful \"non-human\" beings — sometimes kindly, sometimes murderous and cruel — corresponding roughly to the fairi",
+      "after": "One of a special class of powerful ṅon-human\" beings — sometimes kindly, sometimes murderous and cruel — corresponding roughly to the fairie"
+    },
+    {
+      "file": "history.html",
+      "before": "by R.H. Robinson & W.L. Johnson (Belmont, California: Wadsworth, 1996)",
+      "after": "by R.H. Robinson & WḶ. Johnson (Belmont, California: Wadsworth, 1996)"
+    },
+    {
+      "file": "index-author.html",
+      "before": "Lewis, G.N.",
+      "after": "Lewis, GṆ."
+    },
+    {
+      "file": "index-author.html",
+      "before": "Soni, Dr. R.L.",
+      "after": "Soni, Dr. RḶ."
+    },
+    {
+      "file": "index-subject.html",
+      "before": "The difference between \"old\" and \"new\" ~:",
+      "after": "The difference between \"old\" and ṅew\" ~:"
+    },
+    {
+      "file": "index-subject.html",
+      "before": "\"Noble Conversation\" (Study Guide)",
+      "after": "Ṅoble Conversation\" (Study Guide)"
+    },
+    {
+      "file": "index-subject.html",
+      "before": "\"Non-violence\" (Study Guide)",
+      "after": "Ṅon-violence\" (Study Guide)"
+    },
+    {
+      "file": "index-subject.html",
+      "before": "\"Noble Conversation\" (Study Guide)",
+      "after": "Ṅoble Conversation\" (Study Guide)"
+    },
+    {
+      "file": "index-title.html",
+      "before": "(Dr. R.L. Soni, revised by  Bhikkhu Khantipalo; 2006)",
+      "after": "(Dr. RḶ. Soni, revised by  Bhikkhu Khantipalo; 2006)"
+    },
+    {
+      "file": "index-title.html",
+      "before": "\"Self\" (G.N. Lewis, in",
+      "after": "\"Self\" (GṆ. Lewis, in"
+    },
+    {
+      "file": "lib/authors/ariyadhamma/bl115.html",
+      "before": "No. 115 (Kandy: Buddhist Publication Society, 1988). Originally delivered as a sermon under the Bodhi Tree at Kalutara. Published as a Bodhi",
+      "after": "No. 115 (Kandy: Buddhist Publication Society, 1988). Originally delivered as a sermon under the Bodhi Tree at Kalutara. Published as a Bodhi"
+    },
+    {
+      "file": "lib/authors/ariyesako/layguide.html",
+      "before": "The Me.n.daka Allowance",
+      "after": "The Meṇḍaka Allowance"
+    },
+    {
+      "file": "lib/authors/ariyesako/layguide.html",
+      "before": "Paa.timokkha",
+      "after": "Pāṭimokkha"
+    },
+    {
+      "file": "lib/authors/ariyesako/layguide.html",
+      "before": "Sa\"ngh.:",
+      "after": "Saṅgh.:"
+    },
+    {
+      "file": "lib/authors/ariyesako/layguide.html",
+      "before": "sa\"nghaadisesa",
+      "after": "saṅghādisesa"
+    },
+    {
+      "file": "lib/authors/ariyesako/layguide.html",
+      "before": "(Ka.thina)",
+      "after": "(Kaṭhina)"
+    },
+    {
+      "file": "lib/authors/ariyesako/layguide.html",
+      "before": "(dhuta\"nga",
+      "after": "(dhutaṅga"
+    },
+    {
+      "file": "lib/authors/ariyesako/layguide.html",
+      "before": "(saama.\"nera)",
+      "after": "(sāma.ṅera)"
+    },
+    {
+      "file": "lib/authors/ariyesako/layguide.html",
+      "before": "(dhuta\"nga",
+      "after": "(dhutaṅga"
+    },
+    {
+      "file": "lib/authors/ariyesako/layguide.html",
+      "before": "(sa\"nghaati)",
+      "after": "(saṅghāti)"
+    },
+    {
+      "file": "lib/authors/ariyesako/layguide.html",
+      "before": "'Sa\"ngho'",
+      "after": "'Saṅgho'"
+    },
+    {
+      "file": "lib/authors/ariyesako/layguide.html",
+      "before": "Me.n.daka Allowance",
+      "after": "Meṇḍaka Allowance"
+    },
+    {
+      "file": "lib/authors/ariyesako/layguide.html",
+      "before": "Paa.timokkha",
+      "after": "Pāṭimokkha"
+    },
+    {
+      "file": "lib/authors/ariyesako/layguide.html",
+      "before": "(saama.nera)",
+      "after": "(sāmaṇera)"
+    },
+    {
+      "file": "lib/authors/ariyesako/layguide.html",
+      "before": "Paa.timokkha",
+      "after": "Pāṭimokkha"
+    },
+    {
+      "file": "lib/authors/ariyesako/layguide.html",
+      "before": "Paa.timokkha",
+      "after": "Pāṭimokkha"
+    },
+    {
+      "file": "lib/authors/ariyesako/layguide.html",
+      "before": "Sa\"ngha",
+      "after": "Saṅgha"
+    },
+    {
+      "file": "lib/authors/ariyesako/layguide.html",
+      "before": "of him by all the gathered bhikkhus into the Bhikkhu Sa\"ngha — the candidate is known as a",
+      "after": "of him by all the gathered bhikkhus into the Bhikkhu Saṅgha — the candidate is known as a"
+    },
+    {
+      "file": "lib/authors/ariyesako/layguide.html",
+      "before": "saama.nera",
+      "after": "sāmaṇera"
+    },
+    {
+      "file": "lib/authors/ariyesako/layguide.html",
+      "before": "saama.nera",
+      "after": "sāmaṇera"
+    },
+    {
+      "file": "lib/authors/ariyesako/layguide.html",
+      "before": "sa\"nghaa.ti",
+      "after": "saṅghāṭi"
+    },
+    {
+      "file": "lib/authors/ariyesako/layguide.html",
+      "before": "saama.nera",
+      "after": "sāmaṇera"
+    },
+    {
+      "file": "lib/authors/ariyesako/layguide.html",
+      "before": "saama.nera",
+      "after": "sāmaṇera"
+    },
+    {
+      "file": "lib/authors/ariyesako/layguide.html",
+      "before": "saama.nera",
+      "after": "sāmaṇera"
+    },
+    {
+      "file": "lib/authors/ariyesako/layguide.html",
+      "before": "ordination) he does not make any 'lifetime vows' but offers himself for training and instruction under his Preceptor's guidance. At the end ",
+      "after": "ordination) he does not make any 'lifetime vows' but offers himself for training and instruction under his Preceptor's guidance. At the end "
+    },
+    {
+      "file": "lib/authors/ariyesako/layguide.html",
+      "before": "Disrobing is finalized by the monk clearly proclaiming his change of status before another bhikkhu or lay person. Once the other person unde",
+      "after": "Disrobing is finalized by the monk clearly proclaiming his change of status before another bhikkhu or lay person. Once the other person unde"
+    },
+    {
+      "file": "lib/authors/ariyesako/layguide.html",
+      "before": "originally observed 311 Paa.timokkha Rules, and there are whole sections of the Paali Vinaya texts devoted to the their rules.",
+      "after": "originally observed 311 Pāṭimokkha Rules, and there are whole sections of the Pāli Vinaya texts devoted to the their rules."
+    },
+    {
+      "file": "lib/authors/ariyesako/layguide.html",
+      "before": "Sutta- Vibha\"nga",
+      "after": "Sutta- Vibhaṅga"
+    },
+    {
+      "file": "lib/authors/ariyesako/layguide.html",
+      "before": "Paa.timokkha",
+      "after": "Pāṭimokkha"
+    },
+    {
+      "file": "lib/authors/ariyesako/layguide.html",
+      "before": "\"...contain a great variety of procedural material dealing with such important Sangha functions as giving the Going Forth and Acceptance, th",
+      "after": "\"...contain a great variety of procedural material dealing with such important Sangha functions as giving the Going Forth and Acceptance, th"
+    },
+    {
+      "file": "lib/authors/ariyesako/layguide.html",
+      "before": "So the 227 Paa.timokkha Rules are a part of the greater Vinaya. As Ven. Thiradhammo remarks:",
+      "after": "So the 227 Pāṭimokkha Rules are a part of the greater Vinaya. As Ven. Thiradhammo remarks:"
+    },
+    {
+      "file": "lib/authors/ariyesako/layguide.html",
+      "before": "\"...the",
+      "after": "\"..ṭhe"
+    },
+    {
+      "file": "lib/authors/ariyesako/layguide.html",
+      "before": "Paa.timokkha",
+      "after": "Pāṭimokkha"
+    },
+    {
+      "file": "lib/authors/ariyesako/layguide.html",
+      "before": "is more like the bare bones or skeleton of the Vinaya Pi.taka [Basket]. Without reference to the explanations of the Sutta-Vibha\"nga or the ",
+      "after": "is more like the bare bones or skeleton of the Vinaya Piṭaka [Basket]. Without reference to the explanations of the Sutta-Vibhaṅga or the el"
+    },
+    {
+      "file": "lib/authors/ariyesako/layguide.html",
+      "before": "The Buddha laid down that on full and new moon days all the bhikkhus in residence in the same community must come together in a formal meeti",
+      "after": "The Buddha laid down that on full and new moon days all the bhikkhus in residence in the same community must come together in a formal meeti"
+    },
+    {
+      "file": "lib/authors/ariyesako/layguide.html",
+      "before": "Before the Paa.timokkha recitation begins, each bhikkhu should admit to any offences that he knows he has committed by formally telling anot",
+      "after": "Before the Pāṭimokkha recitation begins, each bhikkhu should admit to any offences that he knows he has committed by formally telling anothe"
+    },
+    {
+      "file": "lib/authors/ariyesako/layguide.html",
+      "before": "Sa\"nghaadisesa",
+      "after": "Saṅghādisesa"
+    },
+    {
+      "file": "lib/authors/ariyesako/layguide.html",
+      "before": "This is a very serious class of offence. However, any offending bhikkhu can be rehabilitated through confession and supervised probation. Fi",
+      "after": "This is a very serious class of offence. However, any offending bhikkhu can be rehabilitated through confession and supervised probation. Fi"
+    },
+    {
+      "file": "lib/authors/ariyesako/layguide.html",
+      "before": "Paa.tidesaniiya",
+      "after": "Pāṭidesanīya"
+    },
+    {
+      "file": "lib/authors/ariyesako/layguide.html",
+      "before": "(dukka.ta).",
+      "after": "(dukkaṭa)."
+    },
+    {
+      "file": "lib/authors/ariyesako/layguide.html",
+      "before": "Adhikara.nasamatha",
+      "after": "Adhikaraṇasamatha"
+    },
+    {
+      "file": "lib/authors/ariyesako/layguide.html",
+      "before": "Sa\"nghaadisesa",
+      "after": "Saṅghādisesa"
+    },
+    {
+      "file": "lib/authors/ariyesako/layguide.html",
+      "before": "\"There is, of course, a danger in being too independent in interpreting the tradition, in that strongly held opinions can lead to disharmony",
+      "after": "\"There is, of course, a danger in being too independent in interpreting the tradition, in that strongly held opinions can lead to disharmony"
+    },
+    {
+      "file": "lib/authors/ariyesako/layguide.html",
+      "before": "\"...that any interpretation based on a sound reading of the [Paali] Canon should be respected: that each bhikkhu should follow the interpret",
+      "after": "\"..ṭhat any interpretation based on a sound reading of the [Pāli] Canon should be respected: that each bhikkhu should follow the interpretat"
+    },
+    {
+      "file": "lib/authors/ariyesako/layguide.html",
+      "before": "In the second offence the monks of AA.lavii were doing repairs and 'sprinkled grass and clay' with water that they knew contained life. It i",
+      "after": "In the second offence the monks of Āḷavī were doing repairs and 'sprinkled grass and clay' with water that they knew contained life. It is s"
+    },
+    {
+      "file": "lib/authors/ariyesako/layguide.html",
+      "before": "(dukka.ta)",
+      "after": "(dukkaṭa)"
+    },
+    {
+      "file": "lib/authors/ariyesako/layguide.html",
+      "before": "◊ The first offence of all the 227 listed rules of the Paa.timokkha concerns a bhikkhu engaging in sexual intercourse. It remains a hot issu",
+      "after": "◊ The first offence of all the 227 listed rules of the Pāṭimokkha concerns a bhikkhu engaging in sexual intercourse. It remains a hot issue,"
+    },
+    {
+      "file": "lib/authors/ariyesako/layguide.html",
+      "before": "Sa\"nghaadisesa",
+      "after": "Saṅghādisesa"
+    },
+    {
+      "file": "lib/authors/ariyesako/layguide.html",
+      "before": "\"Should any bhikkhu, overcome by lust, with altered mind, engage in bodily contact with a woman, or in holding her hand, holding a lock of h",
+      "after": "\"Should any bhikkhu, overcome by lust, with altered mind, engage in bodily contact with a woman, or in holding her hand, holding a lock of h"
+    },
+    {
+      "file": "lib/authors/ariyesako/layguide.html",
+      "before": "(dukka.ta).",
+      "after": "(dukkaṭa)."
+    },
+    {
+      "file": "lib/authors/ariyesako/layguide.html",
+      "before": "pa.n.daka",
+      "after": "paṇḍaka"
+    },
+    {
+      "file": "lib/authors/bischoff/wheel399.html",
+      "before": "Eight years after full ordination, at the age of twenty-eight, he became Sangharaja, and then Mahasangharaja, the title conferred by the kin",
+      "after": "Eight years after full ordination, at the age of twenty-eight, he became Sangharaja, and then Mahasangharaja, the title conferred by the kin"
+    },
+    {
+      "file": "lib/authors/bodhi/abhiman.html",
+      "before": "(Colombo: M.D. Gunasena, repr. 1958), pp. 168-70. Malalasekera points out that James Gray, in his edition of",
+      "after": "(Colombo: MḌ. Gunasena, repr. 1958), pp. 168-70. Malalasekera points out that James Gray, in his edition of"
+    },
+    {
+      "file": "lib/authors/bodhi/arahantsbodhisattvas.html",
+      "before": "The most archaic Buddhist texts  —  the Pali Nikāyas and their counterparts from other early schools (some of which have been preserved in t",
+      "after": "The most archaic Buddhist texts  —  the Pali Nikāyas and their counterparts from other early schools (some of which have been preserved in t"
+    },
+    {
+      "file": "lib/authors/bodhi/arahantsbodhisattvas.html",
+      "before": "I have been seeking a point of view that can do justice to both perspectives, that of the Nikāyas and the early Mahāyāna sūtras, a point of ",
+      "after": "I have been seeking a point of view that can do justice to both perspectives, that of the Nikāyas and the early Mahāyāna sūtras, a point of "
+    },
+    {
+      "file": "lib/authors/bodhi/arahantsbodhisattvas.html",
+      "before": "I said above that each extreme attitude  —  \"Nikāya purism\" and \"Mahāyāna elitism\"  —   neglects facts that are discomforting to their respe",
+      "after": "I said above that each extreme attitude  —  Ṅikāya purism\" and \"Mahāyāna elitism\"  —   neglects facts that are discomforting to their respec"
+    },
+    {
+      "file": "lib/authors/bodhi/bam.html",
+      "before": "We arrived in Balangoda in the middle of the afternoon and headed for the Sri Dhammananda Pirivena, where we were to meet Ven. Ananda Maitre",
+      "after": "We arrived in Balangoda in the middle of the afternoon and headed for the Sri Dhammananda Pirivena, where we were to meet Ven. Ananda Maitre"
+    },
+    {
+      "file": "lib/authors/bodhi/bl071.html",
+      "before": "Publication No. 71 (Kandy: Buddhist Publication Society, 1976). Transcribed from the print edition in 1994 by W.D. Savage under the auspices",
+      "after": "Publication No. 71 (Kandy: Buddhist Publication Society, 1976). Transcribed from the print edition in 1994 by WḌ. Savage under the auspices "
+    },
+    {
+      "file": "lib/authors/bodhi/bl129.html",
+      "before": "1.The Human Good Here And Now",
+      "after": "1Ṭhe Human Good Here And Now"
+    },
+    {
+      "file": "lib/authors/bodhi/bl129.html",
+      "before": "for which they are taken up. At this level the precepts are prescribed to show us the way to achieve long-range happiness and freedom from s",
+      "after": "for which they are taken up. At this level the precepts are prescribed to show us the way to achieve long-range happiness and freedom from s"
+    },
+    {
+      "file": "lib/authors/bodhi/bl143.html",
+      "before": "Then it occurred to the bhikkhuni Alavika: \"Now who is it that recited the verse — a human being or a non-human being?\" Then it occurred to ",
+      "after": "Then it occurred to the bhikkhuni Alavika: Ṅow who is it that recited the verse — a human being or a non-human being?\" Then it occurred to h"
+    },
+    {
+      "file": "lib/authors/bodhi/bl143.html",
+      "before": "Then it occurred to the bhikkhuni Soma: \"Now who is this that recited the verse — a human being or a non-human being?\" Then it occurred to h",
+      "after": "Then it occurred to the bhikkhuni Soma: Ṅow who is this that recited the verse — a human being or a non-human being?\" Then it occurred to he"
+    },
+    {
+      "file": "lib/authors/bodhi/bl143.html",
+      "before": "Then it occurred to the bhikkhuni Kisagotami: \"Now who is this that recited the verse — a human being or a non-human being?\" Then it occurre",
+      "after": "Then it occurred to the bhikkhuni Kisagotami: Ṅow who is this that recited the verse — a human being or a non-human being?\" Then it occurred"
+    },
+    {
+      "file": "lib/authors/bodhi/bl143.html",
+      "before": "Then it occurred to the bhikkhuni Vijaya: \"Now who is this...? This is Mara the Evil One... desiring to make me fall away from concentration",
+      "after": "Then it occurred to the bhikkhuni Vijaya: Ṅow who is this...? This is Mara the Evil One... desiring to make me fall away from concentration."
+    },
+    {
+      "file": "lib/authors/bodhi/bl143.html",
+      "before": "Then it occurred to the bhikkhuni Uppalavanna: [132] \"Now who is this...? This is Mara the Evil One... desiring to make me fall away from co",
+      "after": "Then it occurred to the bhikkhuni Uppalavanna: [132] Ṅow who is this...? This is Mara the Evil One... desiring to make me fall away from con"
+    },
+    {
+      "file": "lib/authors/bodhi/bl143.html",
+      "before": "Then it occurred to the bhikkhuni Sela: \"Now who is this...? This is Mara the Evil One... desiring to make me fall away from concentration.\"",
+      "after": "Then it occurred to the bhikkhuni Sela: Ṅow who is this...? This is Mara the Evil One... desiring to make me fall away from concentration.\""
+    },
+    {
+      "file": "lib/authors/bodhi/bl143.html",
+      "before": "Then it occurred to the bhikkhuni Vajira: \"Now who is this that recited the verse — a human being or a non-human being?\" Then it occurred to",
+      "after": "Then it occurred to the bhikkhuni Vajira: Ṅow who is this that recited the verse — a human being or a non-human being?\" Then it occurred to "
+    },
+    {
+      "file": "lib/authors/bodhi/bps-essay_09.html",
+      "before": "The Buddha next explains that a \"noble disciple, devoid of covetousness and ill will, undeluded\" dwells pervading the world with boundless l",
+      "after": "The Buddha next explains that a ṅoble disciple, devoid of covetousness and ill will, undeluded\" dwells pervading the world with boundless lo"
+    },
+    {
+      "file": "lib/authors/bodhi/bps-essay_19.html",
+      "before": "(\"Neither the same nor another\"), the famous line from the",
+      "after": "(Ṅeither the same nor another\"), the famous line from the"
+    },
+    {
+      "file": "lib/authors/bodhi/bps-essay_20.html",
+      "before": "truths. Yet it is just this descriptive word \"noble\" that reveals to us why the Buddha chose to cast his teaching into this specific format,",
+      "after": "truths. Yet it is just this descriptive word ṅoble\" that reveals to us why the Buddha chose to cast his teaching into this specific format, "
+    },
+    {
+      "file": "lib/authors/bodhi/bps-essay_20.html",
+      "before": "The word \"noble,\" or",
+      "after": "The word ṅoble,\" or"
+    },
+    {
+      "file": "lib/authors/bodhi/bps-essay_27.html",
+      "before": "One of the most challenging issues facing Theravada Buddhism in recent years has been the encounter between classical Theravada vipassana me",
+      "after": "One of the most challenging issues facing Theravada Buddhism in recent years has been the encounter between classical Theravada vipassana me"
+    },
+    {
+      "file": "lib/authors/bodhi/bps-essay_27.html",
+      "before": "or concentration, we again find a striking difference in outlook between the non-dual systems and the Ariyan Dhamma. Since, for the non-dual",
+      "after": "or concentration, we again find a striking difference in outlook between the non-dual systems and the Ariyan Dhamma. Since, for the non-dual"
+    },
+    {
+      "file": "lib/authors/bodhi/bps-essay_30.html",
+      "before": "The Pope does not explain exactly why he regards Buddhist soteriology as negative. Most likely, he takes this view because the Buddhist path",
+      "after": "The Pope does not explain exactly why he regards Buddhist soteriology as negative. Most likely, he takes this view because the Buddhist path"
+    }
+  ]
+}

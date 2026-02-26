@@ -1,0 +1,223 @@
+(function () {
+  const form = document.getElementById('search-form');
+  const input = document.getElementById('search-query');
+  const resultsNode = document.getElementById('search-results');
+  const statusNode = document.getElementById('search-status');
+
+  if (!form || !input || !resultsNode || !statusNode) {
+    return;
+  }
+
+  const velthuisReplacements = [
+    [/AA/g, 'Ā'], [/aa/g, 'ā'], [/II/g, 'Ī'], [/ii/g, 'ī'], [/UU/g, 'Ū'], [/uu/g, 'ū'],
+    [/"N/g, 'Ṅ'], [/"n/g, 'ṅ'], [/\.M/g, 'Ṃ'], [/\.m/g, 'ṃ'], [/~N/g, 'Ñ'], [/~n/g, 'ñ'],
+    [/\.T/g, 'Ṭ'], [/\.t/g, 'ṭ'], [/\.D/g, 'Ḍ'], [/\.d/g, 'ḍ'], [/\.N/g, 'Ṇ'], [/\.n/g, 'ṇ'],
+    [/\.L/g, 'Ḷ'], [/\.l/g, 'ḷ']
+  ];
+
+  function velthuisToUnicode(text) {
+    let value = String(text || '');
+    for (const [pattern, replacement] of velthuisReplacements) {
+      value = value.replace(pattern, replacement);
+    }
+    return value;
+  }
+
+  function normalizeForSearch(text) {
+    const unicode = velthuisToUnicode(text);
+    const noMarks = unicode
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .replace(/[.~"]/g, '')
+      .replace(/aa/g, 'a')
+      .replace(/ii/g, 'i')
+      .replace(/uu/g, 'u');
+    return noMarks.replace(/\s+/g, ' ').trim();
+  }
+
+  function highlightSnippet(text, query) {
+    const queryTerms = String(query || '')
+      .split(/\s+/)
+      .map((term) => term.trim())
+      .filter(Boolean)
+      .slice(0, 5);
+
+    if (!queryTerms.length) {
+      return escapeHtml(text);
+    }
+
+    let highlighted = escapeHtml(text);
+    for (const term of queryTerms) {
+      const escapedTerm = term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      highlighted = highlighted.replace(new RegExp(`(${escapedTerm})`, 'ig'), '<mark>$1</mark>');
+    }
+    return highlighted;
+  }
+
+  function escapeHtml(text) {
+    return String(text)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+
+  function updateStatus(message) {
+    statusNode.textContent = message;
+  }
+
+  function renderResults(results, query) {
+    resultsNode.innerHTML = '';
+
+    if (!results.length) {
+      updateStatus(`No results for "${query}".`);
+      return;
+    }
+
+    updateStatus(`${results.length} result${results.length === 1 ? '' : 's'} for "${query}".`);
+
+    for (const result of results) {
+      const li = document.createElement('li');
+      li.className = 'search-result';
+
+      const anchor = document.createElement('a');
+      anchor.href = result.url;
+      anchor.textContent = result.title || result.url;
+      anchor.setAttribute('data-result-link', 'true');
+
+      const meta = document.createElement('div');
+      meta.className = 'search-meta';
+      meta.textContent = `${result.section || 'site'} ${result.dateModified ? `| updated ${result.dateModified}` : ''}`.trim();
+
+      const snippet = document.createElement('p');
+      snippet.innerHTML = highlightSnippet(result.textSnippet || '', query);
+
+      li.append(anchor, meta, snippet);
+      resultsNode.appendChild(li);
+    }
+  }
+
+  function wireKeyboardNavigation() {
+    resultsNode.addEventListener('keydown', (event) => {
+      const links = Array.from(resultsNode.querySelectorAll('a[data-result-link="true"]'));
+      if (!links.length) return;
+      const currentIndex = links.indexOf(document.activeElement);
+
+      if (event.key === 'ArrowDown') {
+        event.preventDefault();
+        const next = links[Math.min(links.length - 1, currentIndex + 1)];
+        (next || links[0]).focus();
+      } else if (event.key === 'ArrowUp') {
+        event.preventDefault();
+        const prev = links[Math.max(0, currentIndex - 1)];
+        (prev || links[0]).focus();
+      }
+    });
+  }
+
+  async function loadState() {
+    if (!window.MiniSearch) {
+      throw new Error('MiniSearch is not available');
+    }
+
+    const [indexRes, docsRes, aliasesRes] = await Promise.all([
+      fetch('/_search/index.json', { cache: 'no-store' }),
+      fetch('/_search/docs.json', { cache: 'no-store' }),
+      fetch('/_search/redirect-aliases.json', { cache: 'no-store' })
+    ]);
+
+    const [indexJson, docs, aliases] = await Promise.all([
+      indexRes.json(),
+      docsRes.json(),
+      aliasesRes.json()
+    ]);
+
+    const miniSearch = window.MiniSearch.loadJSON(JSON.stringify(indexJson), {
+      idField: 'id',
+      fields: ['titleFolded', 'textFolded'],
+      storeFields: ['url', 'title', 'section', 'dateModified', 'textSnippet']
+    });
+
+    const docByUrl = new Map(docs.map((doc) => [doc.url, doc]));
+    return { miniSearch, docByUrl, aliases };
+  }
+
+  function runSearch(state, rawQuery) {
+    const normalized = normalizeForSearch(rawQuery);
+    if (!normalized) return [];
+
+    const rawResults = state.miniSearch.search(normalized, {
+      prefix: true,
+      fuzzy: 0.2,
+      combineWith: 'OR'
+    });
+
+    const deduped = [];
+    const seen = new Set();
+
+    for (const item of rawResults) {
+      const resolvedUrl = state.aliases[item.url] || item.url;
+      if (seen.has(resolvedUrl)) continue;
+      seen.add(resolvedUrl);
+
+      const doc = state.docByUrl.get(resolvedUrl) || state.docByUrl.get(item.url) || {};
+      deduped.push({
+        score: item.score,
+        url: resolvedUrl,
+        title: doc.title || item.title || resolvedUrl,
+        section: doc.section || item.section || 'site',
+        dateModified: doc.dateModified || item.dateModified || '',
+        textSnippet: doc.textSnippet || item.textSnippet || ''
+      });
+    }
+
+    deduped.sort(function (a, b) {
+      if (b.score !== a.score) return b.score - a.score;
+      return String(a.url).localeCompare(String(b.url));
+    });
+
+    return deduped;
+  }
+
+  const statePromise = loadState();
+  wireKeyboardNavigation();
+
+  async function executeSearch(query) {
+    updateStatus('Searching...');
+    try {
+      const state = await statePromise;
+      const results = runSearch(state, query);
+      renderResults(results, query);
+    } catch (error) {
+      updateStatus(`Search unavailable: ${error.message}`);
+      resultsNode.innerHTML = '';
+    }
+  }
+
+  function syncUrl(query) {
+    const url = new URL(window.location.href);
+    if (query) {
+      url.searchParams.set('q', query);
+    } else {
+      url.searchParams.delete('q');
+    }
+    window.history.replaceState({}, '', url.toString());
+  }
+
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const query = input.value.trim();
+    syncUrl(query);
+    executeSearch(query);
+  });
+
+  const params = new URLSearchParams(window.location.search);
+  const initialQuery = params.get('q') || params.get('query') || '';
+  if (initialQuery) {
+    input.value = initialQuery;
+    executeSearch(initialQuery);
+  } else {
+    updateStatus('Enter a query to search the local index.');
+  }
+})();
