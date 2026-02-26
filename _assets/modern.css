@@ -156,6 +156,26 @@ table {
   margin-top: 0;
 }
 
+.mobile-masthead {
+  display: none;
+}
+
+.mobile-masthead-title,
+.mobile-masthead-subtitle {
+  margin: 0;
+}
+
+.mobile-masthead-title {
+  font-family: "Source Sans Pro", "Gill Sans", "Trebuchet MS", "Noto Sans", sans-serif;
+  line-height: 1.06;
+  letter-spacing: 0.01em;
+}
+
+.mobile-masthead-subtitle {
+  color: #2f3440;
+  line-height: 1.2;
+}
+
 #main a,
 #main dt,
 #main dd,
@@ -214,6 +234,74 @@ table {
 @media (max-width: 760px) {
   html {
     font-size: 16px;
+  }
+
+  #H_billboard,
+  #H_billboardHome {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  #H_search {
+    float: none !important;
+    width: 100% !important;
+    margin: 0 0 0.5rem !important;
+    padding: 0 0.25rem;
+  }
+
+  #H_search form > div {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+  }
+
+  #H_search input[type="text"],
+  #H_search input[name="q"],
+  #H_search #q {
+    width: auto !important;
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  #H_search input[type="submit"],
+  #H_search #searchsubmit {
+    flex: 0 0 auto;
+  }
+
+  #H_billboardHome .mainsail,
+  #H_billboard .mainsail {
+    float: none !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 0.25rem;
+  }
+
+  #H_billboardHome .mainsail img,
+  #H_billboard .mainsail img {
+    display: none;
+  }
+
+  #H_billboardHome .mobile-masthead,
+  #H_billboard .mobile-masthead {
+    display: block;
+  }
+
+  #H_billboardHome .mobile-masthead-title,
+  #H_billboard .mobile-masthead-title {
+    font-size: clamp(2rem, 8vw, 2.75rem);
+  }
+
+  #H_billboardHome .mobile-masthead-subtitle,
+  #H_billboard .mobile-masthead-subtitle {
+    font-size: clamp(1.1rem, 4.7vw, 1.45rem);
+    margin-top: 0.2rem;
+  }
+
+  #H_billboardHome .jib,
+  #H_billboard .jib {
+    display: none;
   }
 
   #main,

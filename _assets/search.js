@@ -8,6 +8,41 @@
     return;
   }
 
+  function normalizeBasePath(rawPath) {
+    if (!rawPath || rawPath === '/') return '';
+    const withLeadingSlash = rawPath.startsWith('/') ? rawPath : `/${rawPath}`;
+    const withoutTrailingSlash = withLeadingSlash.replace(/\/+$/, '');
+    return withoutTrailingSlash === '/' ? '' : withoutTrailingSlash;
+  }
+
+  function inferSiteBasePath() {
+    const pathname = String(window.location.pathname || '');
+    const marker = '/search_results.html';
+    if (pathname === marker || pathname.endsWith(marker)) {
+      return normalizeBasePath(pathname.slice(0, -marker.length));
+    }
+    return '';
+  }
+
+  const siteBasePath = inferSiteBasePath();
+
+  function withBasePath(urlPath) {
+    const normalizedPath = String(urlPath || '/').startsWith('/') ? String(urlPath || '/') : `/${String(urlPath || '/')}`;
+    return `${siteBasePath}${normalizedPath}` || '/';
+  }
+
+  function resolveHref(href) {
+    const value = String(href || '');
+    if (!value) return value;
+    if (value.startsWith('/') && !value.startsWith('//')) {
+      return withBasePath(value);
+    }
+    if (/^[a-zA-Z][a-zA-Z0-9+.-]*:/.test(value) || value.startsWith('//') || value.startsWith('#')) {
+      return value;
+    }
+    return value;
+  }
+
   const velthuisReplacements = [
     [/AA/g, 'Ā'], [/aa/g, 'ā'], [/II/g, 'Ī'], [/ii/g, 'ī'], [/UU/g, 'Ū'], [/uu/g, 'ū'],
     [/"N/g, 'Ṅ'], [/"n/g, 'ṅ'], [/\.M/g, 'Ṃ'], [/\.m/g, 'ṃ'], [/~N/g, 'Ñ'], [/~n/g, 'ñ'],
@@ -82,7 +117,7 @@
       li.className = 'search-result';
 
       const anchor = document.createElement('a');
-      anchor.href = result.url;
+      anchor.href = resolveHref(result.url);
       anchor.textContent = result.title || result.url;
       anchor.setAttribute('data-result-link', 'true');
 
@@ -122,9 +157,9 @@
     }
 
     const [indexRes, docsRes, aliasesRes] = await Promise.all([
-      fetch('/_search/index.json', { cache: 'no-store' }),
-      fetch('/_search/docs.json', { cache: 'no-store' }),
-      fetch('/_search/redirect-aliases.json', { cache: 'no-store' })
+      fetch(withBasePath('/_search/index.json'), { cache: 'no-store' }),
+      fetch(withBasePath('/_search/docs.json'), { cache: 'no-store' }),
+      fetch(withBasePath('/_search/redirect-aliases.json'), { cache: 'no-store' })
     ]);
 
     const [indexJson, docs, aliases] = await Promise.all([
