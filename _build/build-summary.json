@@ -1,18 +1,21 @@
 {
-  "generatedAt": "2026-02-27T03:24:52.702Z",
+  "generatedAt": "2026-02-27T09:13:41.818Z",
   "htmlFiles": 2044,
-  "totalFiles": 2264,
+  "totalFiles": 2267,
   "searchDocs": 1939,
   "askPassages": 22259,
   "redirectAliases": 105,
   "assetsCopied": [
     "_assets/modern.css",
+    "_assets/classic.css",
+    "_assets/view-mode.css",
     "_assets/search.js",
     "_assets/vector.js",
     "_assets/ask.js",
     "_assets/ask-core.js",
     "_assets/ask-vector.js",
     "_assets/nav.js",
+    "_assets/view-mode.js",
     "_assets/minisearch.min.js"
   ],
   "paliNormalizeEnabled": true,

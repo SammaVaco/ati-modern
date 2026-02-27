@@ -164,7 +164,7 @@ table {
   margin-top: 0;
 }
 
-[data-nav-replaced="true"] {
+html.mode-nav-modern [data-nav-replaced="true"] {
   display: none !important;
 }
 

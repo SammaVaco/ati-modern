@@ -1,0 +1,73 @@
+html.mode-style-classic {
+  background: #fffeff;
+}
+
+html.mode-style-classic body {
+  background: #fffeff;
+  color: #111;
+  font-family: Verdana, Arial, sans-serif;
+  line-height: 1.35;
+}
+
+html.mode-style-classic #main,
+html.mode-style-classic main,
+html.mode-style-classic article,
+html.mode-style-classic #COPYRIGHTED_TEXT_CHUNK {
+  width: auto;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background: transparent;
+}
+
+html.mode-style-classic #main h1,
+html.mode-style-classic main h1,
+html.mode-style-classic article h1 {
+  font-family: "Arial Unicode MS", Arial, sans-serif;
+  letter-spacing: normal;
+}
+
+html.mode-style-classic .search-controls,
+html.mode-style-classic #ask-form,
+html.mode-style-classic #search-form {
+  display: block;
+}
+
+html.mode-style-classic .search-controls input[type="text"],
+html.mode-style-classic #ask-form input[type="text"],
+html.mode-style-classic #search-form input[type="text"] {
+  border: 1px solid #bbb;
+  border-radius: 0;
+  padding: 0.25rem 0.4rem;
+  font-family: Verdana, Arial, sans-serif;
+}
+
+html.mode-style-classic .search-controls button,
+html.mode-style-classic #ask-form button,
+html.mode-style-classic #search-form button {
+  border: 1px solid #bbb;
+  border-radius: 0;
+  padding: 0.25rem 0.5rem;
+  background: #f7f7f7;
+  color: #111;
+}
+
+html.mode-style-classic .search-results,
+html.mode-style-classic .ask-digest,
+html.mode-style-classic .ask-evidence {
+  display: block;
+  gap: 0;
+}
+
+html.mode-style-classic .search-result,
+html.mode-style-classic .ask-digest-item,
+html.mode-style-classic .ask-evidence-card {
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  background: transparent;
+  margin-bottom: 0.8rem;
+}
