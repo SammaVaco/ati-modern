@@ -293,6 +293,85 @@ table {
   color: #fff;
 }
 
+.ask-confidence {
+  font-family: "Source Sans Pro", "Gill Sans", "Trebuchet MS", "Noto Sans", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #35404d;
+}
+
+.ask-confidence[data-confidence="high"] {
+  color: #1c6a3f;
+}
+
+.ask-confidence[data-confidence="medium"] {
+  color: #6b5a1f;
+}
+
+.ask-confidence[data-confidence="low"] {
+  color: #8a4f12;
+}
+
+.ask-confidence[data-confidence="insufficient"] {
+  color: #7a2b33;
+}
+
+.ask-digest {
+  margin: 0;
+  padding-left: 1.3rem;
+  display: grid;
+  gap: 0.65rem;
+}
+
+.ask-digest-item {
+  background: #fffdf9;
+  border: 1px solid var(--ati-border);
+  border-radius: 10px;
+  padding: 0.65rem 0.72rem;
+}
+
+.ask-citations {
+  display: inline-flex;
+  gap: 0.35rem;
+  margin-left: 0.4rem;
+  white-space: nowrap;
+}
+
+.ask-citation-link {
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.ask-evidence {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.ask-evidence-card {
+  border: 1px solid var(--ati-border);
+  border-radius: 10px;
+  padding: 0.75rem;
+  background: #fffdf9;
+}
+
+.ask-evidence-link {
+  font-family: "Source Sans Pro", "Gill Sans", "Trebuchet MS", "Noto Sans", sans-serif;
+  font-weight: 700;
+}
+
+.ask-evidence-meta {
+  margin: 0.3rem 0 0.4rem;
+  color: var(--ati-muted);
+  font-size: 0.85rem;
+}
+
+.ask-evidence-excerpt {
+  margin: 0;
+}
+
 @media (max-width: 760px) {
   html {
     font-size: 16px;

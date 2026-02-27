@@ -1,3 +1,5 @@
+import { rerankSearchResults, runVectorCapabilityProbe } from './vector.js';
+
 (function () {
   const form = document.getElementById('search-form');
   const input = document.getElementById('search-query');
@@ -102,15 +104,16 @@
     statusNode.textContent = message;
   }
 
-  function renderResults(results, query) {
+  function renderResults(state, results, query) {
     resultsNode.innerHTML = '';
+    const modeLabel = state.vectorProbe?.enabled ? 'lexical + vector rerank' : 'lexical';
 
     if (!results.length) {
-      updateStatus(`No results for "${query}".`);
+      updateStatus(`No results for "${query}" (${modeLabel}).`);
       return;
     }
 
-    updateStatus(`${results.length} result${results.length === 1 ? '' : 's'} for "${query}".`);
+    updateStatus(`${results.length} result${results.length === 1 ? '' : 's'} for "${query}" (${modeLabel}).`);
 
     for (const result of results) {
       const li = document.createElement('li');
@@ -175,7 +178,48 @@
     });
 
     const docByUrl = new Map(docs.map((doc) => [doc.url, doc]));
-    return { miniSearch, docByUrl, aliases };
+    const probeQuery = normalizeForSearch('buddha');
+    const probeCandidates = miniSearch.search(probeQuery, {
+      prefix: true,
+      fuzzy: 0.2,
+      combineWith: 'OR'
+    })
+      .slice(0, 20)
+      .map((row) => {
+        const resolvedUrl = aliases[row.url] || row.url;
+        const doc = docByUrl.get(resolvedUrl) || docByUrl.get(row.url) || {};
+        return {
+          score: row.score,
+          url: resolvedUrl,
+          title: doc.title || row.title || resolvedUrl,
+          textSnippet: doc.textSnippet || row.textSnippet || ''
+        };
+      });
+
+    let vectorProbe = {
+      enabled: false,
+      reason: 'insufficient-probe-sample',
+      p95Ms: 0
+    };
+
+    if (probeCandidates.length >= 2) {
+      vectorProbe = runVectorCapabilityProbe({
+        budgetMs: 22,
+        iterations: 7,
+        probeWork: () => {
+          rerankSearchResults({
+            query: probeQuery,
+            results: probeCandidates,
+            getDocText: (result) => {
+              const doc = docByUrl.get(result.url) || {};
+              return `${doc.title || ''} ${doc.textSnippet || ''}`.trim();
+            }
+          });
+        }
+      });
+    }
+
+    return { miniSearch, docByUrl, aliases, vectorProbe };
   }
 
   function runSearch(state, rawQuery) {
@@ -212,7 +256,18 @@
       return String(a.url).localeCompare(String(b.url));
     });
 
-    return deduped;
+    if (!state.vectorProbe?.enabled || deduped.length < 2) {
+      return deduped;
+    }
+
+    return rerankSearchResults({
+      query: normalized,
+      results: deduped,
+      getDocText: (result) => {
+        const doc = state.docByUrl.get(result.url) || {};
+        return `${doc.title || ''} ${doc.textSnippet || ''}`.trim() || `${result.title || ''} ${result.textSnippet || ''}`;
+      }
+    });
   }
 
   const statePromise = loadState();
@@ -223,7 +278,7 @@
     try {
       const state = await statePromise;
       const results = runSearch(state, query);
-      renderResults(results, query);
+      renderResults(state, results, query);
     } catch (error) {
       updateStatus(`Search unavailable: ${error.message}`);
       resultsNode.innerHTML = '';

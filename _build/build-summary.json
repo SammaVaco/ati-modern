@@ -1,12 +1,16 @@
 {
-  "generatedAt": "2026-02-26T21:03:53.054Z",
-  "htmlFiles": 2043,
-  "totalFiles": 2255,
-  "searchDocs": 1938,
+  "generatedAt": "2026-02-27T02:13:02.991Z",
+  "htmlFiles": 2044,
+  "totalFiles": 2263,
+  "searchDocs": 1939,
+  "askPassages": 22259,
   "redirectAliases": 105,
   "assetsCopied": [
     "_assets/modern.css",
     "_assets/search.js",
+    "_assets/vector.js",
+    "_assets/ask.js",
+    "_assets/ask-core.js",
     "_assets/nav.js",
     "_assets/minisearch.min.js"
   ],
