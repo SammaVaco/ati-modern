@@ -63,6 +63,7 @@ article {
   margin-right: auto;
 }
 
+/* outer wrapper: layout only (no card chrome) */
 #main,
 main {
   max-width: var(--ati-measure);
@@ -71,6 +72,7 @@ main {
   padding: 0;
 }
 
+/* inner content: keep the card style here */
 article,
 #COPYRIGHTED_TEXT_CHUNK {
   max-width: var(--ati-measure);
@@ -495,7 +497,11 @@ table {
   }
 
   #main,
-  main,
+  main {
+    width: min(calc(100% - 0.8rem), var(--ati-measure));
+    padding: 0;
+  }
+
   article,
   #COPYRIGHTED_TEXT_CHUNK {
     width: min(calc(100% - 0.8rem), var(--ati-measure));
