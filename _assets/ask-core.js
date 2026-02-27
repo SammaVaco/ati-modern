@@ -1,3 +1,5 @@
+import { rerankAskEvidenceVector } from './ask-vector.js';
+
 const VELTHUIS_REPLACEMENTS = [
   [/AA/g, 'Ā'],
   [/aa/g, 'ā'],
@@ -201,6 +203,7 @@ export function runAskQuery(state, rawQuery, options = {}) {
     return {
       query,
       normalizedQuery,
+      mode: 'lexical',
       confidence: 'insufficient',
       digestBullets: [],
       evidence: [],
@@ -208,7 +211,8 @@ export function runAskQuery(state, rawQuery, options = {}) {
         retrievalMs: 0,
         rerankMs: 0,
         totalMs: 0,
-        resultCount: 0
+        resultCount: 0,
+        vectorUsed: false
       }
     };
   }
@@ -235,12 +239,20 @@ export function runAskQuery(state, rawQuery, options = {}) {
     };
   });
 
-  const evidence = rerankAskCandidates({
+  let evidence = rerankAskCandidates({
     query: normalizedQuery,
     candidates: mapped,
     topK: options.topK ?? 10,
     maxPerUrl: options.maxPerUrl ?? 2
   });
+  const vectorSearchEnabled = options.vectorSearchEnabled === true;
+  const vectorUsed = vectorSearchEnabled && evidence.length >= 2;
+  if (vectorUsed) {
+    evidence = rerankAskEvidenceVector({
+      query: normalizedQuery,
+      evidence
+    });
+  }
   const rerankMs = now() - rerankStart;
 
   const digest = buildDigestFromEvidence({
@@ -252,6 +264,7 @@ export function runAskQuery(state, rawQuery, options = {}) {
   return {
     query,
     normalizedQuery,
+    mode: vectorUsed ? 'lexical+vector' : 'lexical',
     confidence: digest.confidence,
     digestBullets: digest.bullets,
     evidence,
@@ -259,7 +272,8 @@ export function runAskQuery(state, rawQuery, options = {}) {
       retrievalMs,
       rerankMs,
       totalMs: now() - startedAt,
-      resultCount: evidence.length
+      resultCount: evidence.length,
+      vectorUsed
     }
   };
 }

@@ -1,4 +1,5 @@
 import { runAskQuery } from './ask-core.js';
+import { runAskVectorCapabilityProbe } from './ask-vector.js';
 
 (function () {
   const form = document.getElementById('ask-form');
@@ -57,6 +58,10 @@ import { runAskQuery } from './ask-core.js';
     if (level === 'medium') return 'Confidence: medium';
     if (level === 'low') return 'Confidence: low';
     return 'Confidence: insufficient';
+  }
+
+  function modeLabel(mode) {
+    return mode === 'lexical+vector' ? 'lexical + vector rerank' : 'lexical';
   }
 
   function escapeHtml(text) {
@@ -174,10 +179,26 @@ import { runAskQuery } from './ask-core.js';
       storeFields: ['id', 'url', 'title', 'section', 'charStart', 'charEnd']
     });
 
-    return {
+    const baseState = {
       miniSearch,
       passageById: new Map(passages.map((row) => [row.id, row])),
       aliases
+    };
+
+    const vectorProbe = runAskVectorCapabilityProbe({
+      budgetMs: 26,
+      iterations: 7,
+      probeWork: () => {
+        runAskQuery(baseState, 'buddha', {
+          vectorSearchEnabled: true,
+          topK: 10
+        });
+      }
+    });
+
+    return {
+      ...baseState,
+      vectorProbe
     };
   }
 
@@ -188,13 +209,16 @@ import { runAskQuery } from './ask-core.js';
     clearRendered();
     try {
       const state = await statePromise;
-      const result = runAskQuery(state, query);
+      const result = runAskQuery(state, query, {
+        vectorSearchEnabled: Boolean(state.vectorProbe?.enabled)
+      });
+      const mode = modeLabel(result.mode);
 
       if (result.confidence === 'insufficient') {
-        updateStatus('Insufficient evidence for a reliable summary. Try refining your question.');
+        updateStatus(`Insufficient evidence for a reliable summary. Try refining your question. (${mode})`);
       } else {
         updateStatus(
-          `${result.evidence.length} evidence passage${result.evidence.length === 1 ? '' : 's'} in ${Math.round(result.stats.totalMs)} ms.`
+          `${result.evidence.length} evidence passage${result.evidence.length === 1 ? '' : 's'} in ${Math.round(result.stats.totalMs)} ms (${mode}).`
         );
       }
 
