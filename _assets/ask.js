@@ -22,7 +22,7 @@ import { runAskVectorCapabilityProbe } from './ask-vector.js';
 
   function inferSiteBasePath() {
     const pathname = String(window.location.pathname || '');
-    const marker = '/ask_results.html';
+    const marker = '/search_canon_results.html';
     if (pathname === marker || pathname.endsWith(marker)) {
       return normalizeBasePath(pathname.slice(0, -marker.length));
     }

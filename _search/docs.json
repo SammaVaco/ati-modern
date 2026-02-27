@@ -15,13 +15,6 @@
     "textSnippet": "Abbreviations used in Pali texts AN (or A): Anguttara Nikaya Cv: Cullavagga Dhp: Dhammapada DhpA: Dhammapada-atthakatha (Commentary to the Dhammapada) DN (or D): Digha Nikaya Iti: Itivuttaka Khp: Khuddakapatha KhpA: Khuddakapatha-atthakatha (Commentary to the Khuddakapatha) KN: Khuddaka Nikaya Miln: Milindapañha MN (or"
   },
   {
-    "id": "/ask_results.html",
-    "url": "/ask_results.html",
-    "title": "Ask the Canon",
-    "section": "site",
-    "textSnippet": "Ask the Canon Citation-grounded answers from the local corpus. No external services. Ask Digest Evidence"
-  },
-  {
     "id": "/befriending.html",
     "url": "/befriending.html",
     "title": "Befriending the Suttas: Tips on Reading the Pali Discourses",
@@ -4417,7 +4410,7 @@
     "url": "/news/news9506.html",
     "title": "Access to Insight",
     "section": "news",
-    "textSnippet": "Skip to contentMenuHomeBeginningsTipitakaLibraryIndexesGlossaryHelpAskSearch Welcome to Access to Insight An offering of resources for Buddhist practice The focus here is on resources to support and deepen Buddhist meditation practice. While the emphasis is on teachings from the Theravada Buddhist tradition, other Budd"
+    "textSnippet": "Skip to contentMenuHomeBeginningsTipitakaLibraryIndexesGlossaryHelpSearchSearch Welcome to Access to Insight An offering of resources for Buddhist practice The focus here is on resources to support and deepen Buddhist meditation practice. While the emphasis is on teachings from the Theravada Buddhist tradition, other B"
   },
   {
     "id": "/news/news9509.html",
@@ -5063,21 +5056,28 @@
     "url": "/random-article.html",
     "title": "Random article...",
     "section": "site",
-    "textSnippet": "Random article...Skip to contentMenuHomeBeginningsTipitakaLibraryIndexesGlossaryHelpAskSearch Switch to Classic mode"
+    "textSnippet": "Random article...Skip to contentMenuHomeBeginningsTipitakaLibraryIndexesGlossaryHelpSearchSearch Switch to Classic mode"
   },
   {
     "id": "/random-sutta.html",
     "url": "/random-sutta.html",
     "title": "Random sutta...",
     "section": "site",
-    "textSnippet": "Random sutta...Skip to contentMenuHomeBeginningsTipitakaLibraryIndexesGlossaryHelpAskSearch Switch to Classic mode"
+    "textSnippet": "Random sutta...Skip to contentMenuHomeBeginningsTipitakaLibraryIndexesGlossaryHelpSearchSearch Switch to Classic mode"
   },
   {
     "id": "/repackaged-example-01.html",
     "url": "/repackaged-example-01.html",
     "title": "The Economy of Gifts (Repackaging Example)",
     "section": "site",
-    "textSnippet": "Skip to contentMenuHomeBeginningsTipitakaLibraryIndexesGlossaryHelpAskSearch Back to FAQ | see the ATI edition The Economy of Gifts by Thanissaro Bhikkhu ~ an example of a \"repackaged\" page from Access to Insight ~ The next three lines contain the copyright notice, the attribution, and the license restatement. They can"
+    "textSnippet": "Skip to contentMenuHomeBeginningsTipitakaLibraryIndexesGlossaryHelpSearchSearch Back to FAQ | see the ATI edition The Economy of Gifts by Thanissaro Bhikkhu ~ an example of a \"repackaged\" page from Access to Insight ~ The next three lines contain the copyright notice, the attribution, and the license restatement. They "
+  },
+  {
+    "id": "/search_canon_results.html",
+    "url": "/search_canon_results.html",
+    "title": "Search the Canon",
+    "section": "site",
+    "textSnippet": "Search the Canon Citation-grounded answers from the local corpus. No external services. Search Digest Evidence"
   },
   {
     "id": "/search_results.html",

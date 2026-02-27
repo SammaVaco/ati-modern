@@ -1,7 +1,6 @@
 [
   "/404.html",
   "/abbrev.html",
-  "/ask_results.html",
   "/befriending.html",
   "/begin.html",
   "/devices.html",
@@ -635,6 +634,7 @@
   "/random-article.html",
   "/random-sutta.html",
   "/repackaged-example-01.html",
+  "/search_canon_results.html",
   "/search_results.html",
   "/sources.html",
   "/tech/download/bulk.html",
