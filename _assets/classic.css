@@ -1,73 +1,130 @@
-html.mode-style-classic {
+html.mode-classic {
   background: #fffeff;
 }
 
-html.mode-style-classic body {
+html.mode-classic body {
   background: #fffeff;
   color: #111;
-  font-family: Verdana, Arial, sans-serif;
-  line-height: 1.35;
 }
 
-html.mode-style-classic #main,
-html.mode-style-classic main,
-html.mode-style-classic article,
-html.mode-style-classic #COPYRIGHTED_TEXT_CHUNK {
-  width: auto;
-  max-width: none;
-  margin: 0;
-  padding: 0;
-  border: 0;
-  border-radius: 0;
-  box-shadow: none;
-  background: transparent;
-}
-
-html.mode-style-classic #main h1,
-html.mode-style-classic main h1,
-html.mode-style-classic article h1 {
-  font-family: "Arial Unicode MS", Arial, sans-serif;
-  letter-spacing: normal;
-}
-
-html.mode-style-classic .search-controls,
-html.mode-style-classic #ask-form,
-html.mode-style-classic #search-form {
+html.mode-classic .search-controls,
+html.mode-classic #search-form,
+html.mode-classic #ask-form {
   display: block;
 }
 
-html.mode-style-classic .search-controls input[type="text"],
-html.mode-style-classic #ask-form input[type="text"],
-html.mode-style-classic #search-form input[type="text"] {
+html.mode-classic .search-controls input[type="text"],
+html.mode-classic #search-form input[type="text"],
+html.mode-classic #ask-form input[type="text"] {
+  width: min(100%, 32rem);
   border: 1px solid #bbb;
   border-radius: 0;
-  padding: 0.25rem 0.4rem;
   font-family: Verdana, Arial, sans-serif;
+  font-size: 0.95rem;
+  padding: 0.2rem 0.3rem;
 }
 
-html.mode-style-classic .search-controls button,
-html.mode-style-classic #ask-form button,
-html.mode-style-classic #search-form button {
-  border: 1px solid #bbb;
+html.mode-classic .search-controls button,
+html.mode-classic #search-form button,
+html.mode-classic #ask-form button {
+  margin-top: 0.35rem;
+  border: 1px solid #999;
   border-radius: 0;
-  padding: 0.25rem 0.5rem;
-  background: #f7f7f7;
+  background: #f4f4f4;
   color: #111;
+  font-family: Verdana, Arial, sans-serif;
 }
 
-html.mode-style-classic .search-results,
-html.mode-style-classic .ask-digest,
-html.mode-style-classic .ask-evidence {
+html.mode-classic .search-results,
+html.mode-classic .ask-evidence,
+html.mode-classic .ask-digest {
   display: block;
-  gap: 0;
+  padding-left: 1.2rem;
 }
 
-html.mode-style-classic .search-result,
-html.mode-style-classic .ask-digest-item,
-html.mode-style-classic .ask-evidence-card {
+html.mode-classic .search-result,
+html.mode-classic .ask-evidence-card,
+html.mode-classic .ask-digest-item {
   border: 0;
   border-radius: 0;
-  padding: 0;
   background: transparent;
-  margin-bottom: 0.8rem;
+  padding: 0;
+  margin: 0 0 1rem;
+}
+
+html.mode-classic #H_content a,
+html.mode-classic #main a,
+html.mode-classic #H_content dd,
+html.mode-classic #H_content li,
+html.mode-classic #main dd,
+html.mode-classic #main li {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 760px) {
+  html.mode-classic #H_container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 0.45rem !important;
+    margin: 0 !important;
+    box-sizing: border-box;
+  }
+
+  html.mode-classic #H_billboard,
+  html.mode-classic #H_billboardHome {
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 0 0.65rem !important;
+  }
+
+  html.mode-classic #H_content {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 0 0.8rem !important;
+    box-sizing: border-box;
+  }
+
+  html.mode-classic #sidebar {
+    float: none !important;
+    width: 100% !important;
+    min-height: 0 !important;
+    border-left: 0 !important;
+    padding: 0 !important;
+    margin: 0.8rem 0 0 !important;
+  }
+
+  html.mode-classic #H_search {
+    float: none !important;
+    width: 100% !important;
+    margin: 0 0 0.7rem !important;
+  }
+
+  html.mode-classic #H_search #q,
+  html.mode-classic #H_search input[name="q"] {
+    width: 100% !important;
+    box-sizing: border-box;
+  }
+
+  html.mode-classic .mainsail,
+  html.mode-classic .jib {
+    float: none !important;
+    width: 100% !important;
+    margin: 0 !important;
+  }
+
+  html.mode-classic .jib {
+    margin-top: 0.65rem !important;
+  }
+
+  html.mode-classic img,
+  html.mode-classic table,
+  html.mode-classic iframe {
+    max-width: 100%;
+    height: auto;
+  }
+
+  html.mode-classic {
+    overflow-x: hidden;
+  }
 }
